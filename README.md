@@ -4,7 +4,7 @@
 The application is designed to check to check correctness of AWS::IAM::Role Policy JSON file.
 
 ## Features
-* checking for correctness of AWS::IAM::Role Policy JSON file
+* checking for correctness of AWS::IAM::Role Policy JSON file format
 * informs about '*' sign in "Resource" field
 
 ## Requirements
