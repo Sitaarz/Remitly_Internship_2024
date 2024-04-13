@@ -23,7 +23,7 @@ class AWS_JSON_Reader:
             raise
 
 
-    def checkIfWildCardExists(self, path_to_AWS_file: str):
+    def checkIfWildCardExists(self, path_to_AWS_file: str)->bool:
         with open(path_to_AWS_file, 'rb') as f:
             try:
                 policy_json_dict = json.load(f)
@@ -35,19 +35,17 @@ class AWS_JSON_Reader:
 
         match statement:
             case dict():
-                return statement['Resource'] == '*'
+                return not statement.get('Resource','') == '*'
             case list():
-                return any(s['Resource'] == '*' for s in statement)
+
+                return all(s.get('Resource', '') != '*' for s in statement)
         return False
 
-    def verify_and_check_WildCard(self, path_to_AWS_file):
+    def verify_and_check_WildCard(self, path_to_AWS_file:str)->bool:
         self.verify_JSON(path_to_AWS_file)
-        self.checkIfWildCardExists(path_to_AWS_file)
+        return self.checkIfWildCardExists(path_to_AWS_file)
 
 
 if __name__ == '__main__':
     reader = AWS_JSON_Reader('./AWS_IAM_Role_Policy_Schema.json')
-    # reader.verify_JSON("./test_data/test_1.json")
-    # if reader.checkIfWildCardExists("./test_data/test_1.json"):
-    #     print("Resource in statement element equal *")
-    reader.verify_and_check_WildCard("./test_data/test_1.json")
+    print(reader.verify_and_check_WildCard("./test_false_data/test_one_list_element.json"))
