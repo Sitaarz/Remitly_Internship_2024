@@ -5,7 +5,7 @@ The application is designed to check to check correctness of AWS::IAM::Role Poli
 
 ## Features
 * checking for correctness of AWS::IAM::Role Policy JSON file format
-* informs about '*' sign in "Resource" field
+* informs about '*' sign existance in "Resource" field
 
 ## Requirements
 * Python 3.x: The program is written in Python and requires an installed Python interpreter version 3.x.
