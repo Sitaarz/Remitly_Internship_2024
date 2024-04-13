@@ -1,0 +1,21 @@
+{
+    "PolicyName": "root",
+    "PolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "IamListAccess",
+                "Effect": "Allow",
+                "Action": [
+                    "iam:ListRoles",
+                    "iam:ListUsers"
+                ],
+                "Resource": "*",
+              "NotResource": [
+              "arn:aws:s3:::HRBucket/Payroll",
+              "arn:aws:s3:::HRBucket/Payroll/*"
+              ]
+            }
+        ]
+    }
+}
