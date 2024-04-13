@@ -10,8 +10,9 @@
                     "iam:ListRoles",
                     "iam:ListUsers"
                 ],
-                "Resource": "*"
+                "Resource": "arn:aws:s3:::DOC-EXAMPLE-BUCKET/*"
             }
         ]
     }
 }
+
