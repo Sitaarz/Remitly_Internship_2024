@@ -39,7 +39,7 @@ The application is designed to check to check correctness of AWS::IAM::Role Poli
    python RemitlyIsTheBest.py pathToTestedJSONFile
    ```
 
-## Tests running
+## Running Tests
 1. Enter project directory.
 2. Run the following command:
    ```bash
