@@ -34,14 +34,14 @@ The application is designed to check to check correctness of AWS::IAM::Role Poli
    
 ## Usage
 1. Enter project directory.
-2. Type:
+2. Run the following command:
    ```bash
    python RemitlyIsTheBest.py pathToTestedJSONFile
    ```
 
 ## Tests running
 1. Enter project directory.
-2. Type:
+2. Run the following command:
    ```bash
    python test_JsonReader.py
    ```
